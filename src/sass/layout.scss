@@ -1,0 +1,46 @@
+// @Date:   2017-04-14T17:46:28+08:00
+// @Last modified time: 2017-04-21T06:29:11+08:00
+$black: #04162b;
+$red: #6be413;
+$green :#2be037;
+$origin:#e0d61d;
+
+.layout-all {
+  height: 100%;
+  width: 100%;
+
+  .layout-head {
+    height: 60px;
+    background-color: $black;
+
+    .logo {
+      height: 100%;
+      background-color: $red;
+    }
+
+    .login {
+        height: 100%;
+      background-color: $red;
+    }
+  }
+  .layout-content{
+  //  position: absolute;
+    height: 500px;
+  //  background-color: $green;
+    .layout-memu{
+      height: 500px;
+      background-color:$green;
+    }
+    .main{
+        height: 500px;
+        background-color:$origin;
+    }
+  }
+  .layout-footer{
+    background-color: $black;
+    // position:fixed;
+    // bottom:0;
+     height: 60px;
+     width: 100%;
+  }
+}

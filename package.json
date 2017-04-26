@@ -1,0 +1,39 @@
+{
+  "name": "backboneTest",
+  "version": "1.0.0",
+  "description": "这是来测试，使用webpack来使学习backbone",
+  "main": "builds.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jack-zdl/upm-web.git"
+  },
+  "keywords": [
+    " "
+  ],
+  "author": "'zhangdelei' <'zhangdelei@bsgchina.com'>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jack-zdl/upm-web/issues"
+  },
+  "homepage": "https://github.com/jack-zdl/upm-web#readme",
+  "dependencies": {
+    "backbone-model": "1.0.10",
+    "font-awesome": "4.7.0",
+    "jquery": "1.11.3"
+  },
+  "devDependencies": {
+    "bootstrap": "3.3.7",
+    "gulp-autoprefixer": "3.1.1",
+    "gulp-compass": "2.1.0",
+    "gulp-minify": "0.0.15",
+    "gulp-rename": "1.2.2",
+    "gulp-sourcemaps": "2.6.0",
+    "gulp-sprite-generator": "0.2.3",
+    "jquery": "1.11.3",
+    "webpack": "2.2.1",
+    "webpack-dev-server": "2.4.2"
+  }
+}

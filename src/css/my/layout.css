@@ -1,0 +1,10 @@
+.layout-all { height: 100%; width: 100%; }
+.layout-all .layout-head { height: 60px; background-color: #04162b; }
+.layout-all .layout-head .logo { height: 100%; background-color: #6be413; }
+.layout-all .layout-head .login { height: 100%; background-color: #6be413; }
+.layout-all .layout-content { height: 500px; }
+.layout-all .layout-content .layout-memu { height: 500px; background-color: #2be037; }
+.layout-all .layout-content .main { height: 500px; background-color: #e0d61d; }
+.layout-all .layout-footer { background-color: #04162b; height: 60px; width: 100%; }
+
+/*# sourceMappingURL=layout.css.map */
