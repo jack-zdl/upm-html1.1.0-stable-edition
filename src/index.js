@@ -1,6 +1,6 @@
 /**
  * @Date:   2017-03-04T12:47:57+08:00
- * @Last modified time: 2017-04-26T11:32:50+08:00
+ * @Last modified time: 2017-05-01T20:39:47+08:00
  * @description reequire只需加载一次就可以了
  */
 
@@ -17,17 +17,24 @@
 //var app = require("./js/model");
 //alert("测试="+app.model.get("key"));
 //alert("webpack");
-var $ = require('jquery');
-var _ = require("./js/plugin/undersource/underscore.js");
-var Backbone = require("./js/plugin/backbone/backbone.js");
-var app =require("./js/app.config.seed.js");
-//var ajaxModel = require("./js/my/models/ajaxModel.js");
-//var app= require("./js/my/views/dashboardView.js");
-// function dashboardMain(){
-//   var ajax  = new ajaxModel();
-//   var result = ajax.get(app.appConfig.IP+"");
-// }
-//dashboardMain();
+// var $ = require('jquery');
+// var _ = require("./js/plugin/underscore/underscore.js");
+// var Backbone = require("./js/plugin/backbone/backbone.js");
+// var highcharts = require("./js/plugin/my/highcharts.js");
+// var ajaxModel = require("./js/my/vo/ajaxModel.js");
+// var judgeStatusUtilModel = require("./js/my/vo/judgeStatusUtilModel.js");
+// var highchartOptionUtil = require("./js/my/vo/highchartOptionUtil.js");
+// var app = require("./js/my/models/dashboardModel.js");
+// var app = require("./js/my/collections/dashboardCollection.js");
+// var app = require("./js/my/views/dashboardView.js");
+var dashboardMain = require("./js/main/dashboardMain.js");
+
+
+
+
+//写dahsboard主函数
+ 
+dashboardMain();
 //var dashboard = new app.appModel.Views.dashboard();
 
 //dashboard.render();

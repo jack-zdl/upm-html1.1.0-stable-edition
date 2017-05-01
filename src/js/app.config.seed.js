@@ -1,6 +1,6 @@
 /**
  * @Date:   2017-04-20T22:58:35+08:00
- * @Last modified time: 2017-04-26T11:31:35+08:00
+ * @Last modified time: 2017-05-01T20:47:02+08:00
  */
 
 
@@ -130,33 +130,20 @@ var root = this,
 /*
  * END APP.CONFIG
  */
-/**
- * 下面是我的配置对象
- */
-var app = new Object({
-  appModel : new Object({
-    Models: {},
-    Views: {},
-    Collections: {},
-    Controllers: {}
-  }),
-  appConfig : new Object({
-    IP: "192.168.200.135:8500", //主机IP
-    FreshenTime: 5e3, //首页刷新时间
-    graphFreshenTime: 6e4, //graph刷新时间
-    graphAllTime: 24, //graph总共时间
-  })
-});
-// var app = new Object({
-//   Models: {},
-//   Views: {},
-//   Collections: {},
-//   Controllers: {}
-// });
-// var appConfig = new Object({
-//   IP: "192.168.200.135:8500", //主机IP
-//   FreshenTime: 5e3, //首页刷新时间
-//   graphFreshenTime: 6e4, //graph刷新时间
-//   graphAllTime: 24, //graph总共时间
-// });
-module.exports=app;
+ /**
+  * 下面是我的配置对象
+  */
+ var app = new Object({
+   appModel : new Object({
+     Models: {},
+     Views: {},
+     Collections: {},
+     Controllers: {},
+     Routers:{}
+   }),
+   appConfig : new Object({
+     IP: "http://127.0.0.1:8080", //主机IP
+     SITEID : "79affb2429ef48faa57c802a88dd8e7f",
+     FRESHENTIME: 5e3  //首页刷新时间
+   })
+ });

@@ -1,6 +1,12 @@
+/**
+ * @Date:   2017-04-21T12:06:39+08:00
+ * @Last modified time: 2017-05-01T20:47:38+08:00
+ */
+
+
+
 var Backbone = require('backbone');
-var layout = require("./tempaltes/layout.html");
-App.Routers.Main=Backbone.Router.extend({
+app.appModel.Routers.main=Backbone.Router.extend({
   //hash maps for Routers
   routes:{
     "":"index",

@@ -18,15 +18,21 @@
 		<ul id="sparks" class="">
 			<li class="sparks-info">
 				<h5> 交易金额<span class="txt-color-blue">$47,171</span></h5>
-
+				<div class="sparkline txt-color-blue hidden-mobile hidden-md hidden-sm">
+					1300, 1877, 2500, 2577, 2000, 2100, 3000, 2700, 3631, 2471, 2700, 3631, 2471
+				</div>
 			</li>
 			<li class="sparks-info">
-				<h5> 资源使用指数 <span class="txt-color-purple"><i class="fa fa-arrow-circle-up"></i>&nbsp;45%</span></h5>
-
+				<h5> 资源使用指数<span class="txt-color-purple"><i class="fa fa-arrow-circle-up"></i>&nbsp;45%</span></h5>
+				<div class="sparkline txt-color-purple hidden-mobile hidden-md hidden-sm">
+					110,150,300,130,400,240,220,310,220,300, 270, 210
+				</div>
 			</li>
 			<li class="sparks-info">
 				<h5> 资源占用量 <span class="txt-color-greenDark"><i class="fa fa-shopping-cart"></i>&nbsp;2447</span></h5>
-
+				<div class="sparkline txt-color-greenDark hidden-mobile hidden-md hidden-sm">
+					110,150,300,130,400,240,220,310,220,300, 270, 210
+				</div>
 			</li>
 		</ul>
 	</div>
@@ -37,82 +43,183 @@
 <!-- end row -->
 
 
+<!-- row -->
+
+<section id="widget-grid" class="">
+
 	<!-- row -->
-
 	<div class="row">
+		<article class="col-sm-12">
+			<!-- new widget -->
+			<div class="jarviswidget" id="wid-id-0" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false">
+				<!-- widget options:
+				usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
 
-		<!-- a blank row to get started -->
-		<div class="col-sm-12">
-			<!-- your contents here -->
-				<div class="pjqgrid">
-					  <table class="jqgrid"></table>
+				data-widget-colorbutton="false"
+				data-widget-editbutton="false"
+				data-widget-togglebutton="false"
+				data-widget-deletebutton="false"
+				data-widget-fullscreenbutton="false"
+				data-widget-custombutton="false"
+				data-widget-collapsed="true"
+				data-widget-sortable="false"
+
+				-->
+				<header>
+					<span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>
+					<h2>资源使用趋势</h2>
+
+					<ul class="nav nav-tabs pull-right in" id="myTab">
+						<li class="active">
+							<a data-toggle="tab" href="#s1"><i class="fa fa-clock-o"></i> <span class="hidden-mobile hidden-tablet">全局概览</span></a>
+						</li>
+
+					</ul>
+
+				</header>
+
+				<!-- widget div-->
+				<div class="no-padding">
+					<!-- widget edit box -->
+					<div class="jarviswidget-editbox">
+						test
+					</div>
+					<!-- end widget edit box -->
+
+					<div class="widget-body">
+						<!-- content -->
+						<div id="myTabContent" class="tab-content">
+							<div class="tab-pane fade active in padding-10 no-padding-bottom" id="s1">
+								<div class="row no-space">
+									<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+										<div id="updating-chart" class="chart-large txt-color-blue">
+											<!-- tab1中的图 -->
+										</div>
+
+									</div>
+									<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 show-stats">
+
+										<div class="row">
+											<div style="text-align: center; padding-bottom: 20px;"><span><b>工单执行状态</b></span></div>
+											<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
+												<!--40/200 -->
+												<span class="text"> 未执行<span id="disappearance" class="pull-right"></span> </span>
+												<div class="progress">
+													<!-- width: 20%;-->
+													<div class="progress-bar bg-color-blue" id="disappearance-style" style=""></div>
+												</div>
+											</div>
+											<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12"> <span class="text"> 执行成功 <span id="agree" class="pull-right"></span> </span>
+												<div class="progress">
+													<div class="progress-bar bg-color-green" id="agree-style" style=""></div>
+												</div>
+											</div>
+											<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12"> <span class="text"> 执行失败<span id="disagree" class="pull-right">   </span> </span>
+												<div class="progress">
+													<div class="progress-bar bg-color-red" id="disagree-style" style=""></div>
+												</div>
+											</div>
+											<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12"> <span class="text">执行中 <span id="action" class="pull-right"></span> </span>
+												<div class="progress">
+													<div class="progress-bar bg-color-green" id="action-style" style=""></div>
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+								<!-- 集群下拉框-->
+								<br>
+								<header id="clusterView">
+									<span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> 集群：</span>
+									<div class="btn-group">
+										<button class="btn dropdown-toggle btn-xs btn-success" data-toggle="dropdown" id="cluster">
+															<span id="cluster-text"></span>
+																<i class="fa fa-caret-down"></i>
+															</button>
+										<ul id="cluster-ui" class="dropdown-menu pull-left js-status-update">
+										</ul>
+									</div>
+								</header>
+
+								<div class="show-stat-microcharts">
+
+
+									<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" id="fresh-cpu">
+										<!-- data-percent="33" data-pie-size="50" -->
+										<div class="easy-pie-chart txt-color-orangeDark" id="cpu-percent" data-percent="" data-pie-size="50">
+											<span class="percent percent-sign"> </span>
+										</div>
+										<span class="easy-pie-title"> CPU分配率<i class="fa fa-caret-up icon-color-bad"></i> </span>
+
+										<!-- <div class="sparkline txt-color-greenLight hidden-sm hidden-md pull-right" data-sparkline-type="line" data-sparkline-height="33px" data-sparkline-width="70px" data-fill-color="transparent">
+											130, 187, 250, 257, 200, 210, 300, 270, 363, 247, 270, 363, 247
+										</div> -->
+									</div>
+									<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" id="fresh-mem">
+										<div class="easy-pie-chart txt-color-greenLight" id="mem-percent" data-percent="" data-pie-size="50">
+											<span class="percent percent-sign"><!-- 78.9 --> </span>
+										</div>
+										<span class="easy-pie-title"> 内存分配率 <i class="fa fa-caret-down icon-color-good"></i></span>
+
+									</div>
+									<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+										<div class="easy-pie-chart txt-color-blue" id="disk-percent" data-percent="" data-pie-size="50">
+											<span class="percent percent-sign"><!--23 -->  </span>
+										</div>
+										<span class="easy-pie-title"> IP地址分配率 <i class="fa fa-caret-up icon-color-good"></i></span>
+
+									</div>
+									<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+										<div class="easy-pie-chart txt-color-white" id="container-percent" data-percent="" data-pie-size="50">
+											<span class="percent prev "> </span>
+										</div>
+										<span class="easy-pie-title"> 容器数量 <i class="fa fa-caret-down icon-color-good"></i></span>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end s1 tab pane -->
+
+						</div>
+
+						<!-- end content -->
+					</div>
+
 				</div>
-				<div id="dashboard-content"></div>
-		</div>
+				<!-- end widget div -->
+			</div>
+			<!-- end widget -->
 
+		</article>
 	</div>
 
+	<div id="dashboard-content"></div>
+
 	<!-- end row -->
+</section>
 
 
 <script type="text/javascript">
+	pageSetUp();
 
-	//
-	// pageSetUp();
-	//
-	// /*
-	//  * ALL PAGE RELATED SCRIPTS CAN GO BELOW HERE
-	//  * eg alert("my home function");
-	//  *
-	//  * var pagefunction = function() {
-	//  *   ...
-	//  * }
-	//  * loadScript("js/plugin/_PLUGIN_NAME_.js", pagefunction);
-	//  *
-	//  * TO LOAD A SCRIPT:
-	//  * var pagefunction = function (){
-	//  *  loadScript(".../plugin.js", run_after_loaded);
-	//  * }
-	//  *
-	//  * OR you can load chain scripts by doing
-	//  *
-	//  * loadScript(".../plugin.js", function(){
-	//  * 	 loadScript("../plugin.js", function(){
-	//  * 	   ...
-	//  *   })
-	//  * });
-	//  */
-	//
-	// // pagefunction
-	//
-	// var pagefunction = function() {
-	// 	// clears the variable if left blank
-	// };
-	//
-	// // end pagefunction
-	//
-	// // destroy generated instances
-	// // pagedestroy is called automatically before loading a new page
-	// // only usable in AJAX version!
-	//
-	// var pagedestroy = function(){
-	//
-	// 	/*
-	// 	Example below:
-	//
-	// 	$("#calednar").fullCalendar( 'destroy' );
-	// 	if (debugState){
-	// 		root.console.log("✔ Calendar destroyed");
-	// 	}
-	//
-	// 	For common instances, such as Jarviswidgets, Google maps, and Datatables, are automatically destroyed through the app.js loadURL mechanic
-	//
-	// 	*/
-	// }
-	//
-	// // end destroy
-	//
-	// // run pagefunction
-	// pagefunction();
+	// pagefunction
 
+	var pagefunction = function() {
+
+	};
+
+	// end pagefunction
+
+	// destroy generated instances
+	// pagedestroy is called automatically before loading a new page
+	// only usable in AJAX version!
+
+	var pagedestroy = function() {}
+
+	// end destroy
+
+	// run pagefunction
+	pagefunction();
 </script>
