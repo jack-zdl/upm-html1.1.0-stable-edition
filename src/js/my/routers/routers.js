@@ -1,6 +1,6 @@
 /**
  * @Date:   2017-04-21T12:06:39+08:00
- * @Last modified time: 2017-05-01T20:47:38+08:00
+ * @Last modified time: 2017-05-02T07:57:18+08:00
  */
 
 
@@ -14,6 +14,7 @@ app.appModel.Routers.main=Backbone.Router.extend({
   },
   index:function(){
     //Homepage
+    alert("测试");
   },
   dashboard:function(){
     //

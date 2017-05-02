@@ -4,7 +4,10 @@
   "description": "这是来测试，使用webpack来使学习backbone",
   "main": "builds.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "dev": "webpack-dev-server --devtool eval-source-map --progress --no-colors --hot --inline --content-base ./src",
+    "build": "webpack --progress --no-colors",
+    "start":"webpack-dev-server  --no-colors  --inline"
   },
   "repository": {
     "type": "git",
