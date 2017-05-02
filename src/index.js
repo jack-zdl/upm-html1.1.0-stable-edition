@@ -1,6 +1,6 @@
 /**
  * @Date:   2017-03-04T12:47:57+08:00
- * @Last modified time: 2017-05-01T20:39:47+08:00
+ * @Last modified time: 2017-05-02T21:10:57+08:00
  * @description reequire只需加载一次就可以了
  */
 
@@ -27,14 +27,16 @@
 // var app = require("./js/my/models/dashboardModel.js");
 // var app = require("./js/my/collections/dashboardCollection.js");
 // var app = require("./js/my/views/dashboardView.js");
-var dashboardMain = require("./js/main/dashboardMain.js");
+//var dashboardMain = require("./js/main/dashboardMain.js");
+var app = require("./js/my/routers/routers.js");
 
 
-
+var router = new app.appModel.Routers.main();
+Backbone.history.start();
 
 //写dahsboard主函数
- 
-dashboardMain();
+
+//dashboardMain();
 //var dashboard = new app.appModel.Views.dashboard();
 
 //dashboard.render();

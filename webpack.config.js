@@ -1,6 +1,6 @@
 /**
  * @Date:   2017-03-04T12:49:16+08:00
- * @Last modified time: 2017-05-02T07:28:57+08:00
+ * @Last modified time: 2017-05-02T20:55:01+08:00
  */
 
  var webpack = require('webpack');
@@ -14,9 +14,9 @@
    },
    devServer: {
     contentBase: "./src/",//本地服务器所加载的页面所在的目录
-    colors: true,//终端中输出结果为彩色
+  //  colors: false,//终端中输出结果为彩色
     historyApiFallback: true,//不跳转
-     port: 3000,
+    port: 8088,
     inline: true//实时刷新
   },
    module: {

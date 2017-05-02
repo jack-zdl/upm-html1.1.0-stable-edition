@@ -7,7 +7,7 @@
     "test": "test",
     "dev": "webpack-dev-server --devtool eval-source-map --progress --no-colors --hot --inline --content-base ./src",
     "build": "webpack --progress --no-colors",
-    "start":"webpack-dev-server  --no-colors  --inline"
+    "start":"http://localhost:8088/ & webpack-dev-server"
   },
   "repository": {
     "type": "git",
