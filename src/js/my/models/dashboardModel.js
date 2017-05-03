@@ -1,7 +1,8 @@
 /**
  * @Date:   2017-04-23T17:45:10+08:00
- * @Last modified time: 2017-05-01T20:22:08+08:00
+ * @Last modified time: 2017-05-03T09:33:23+08:00
  */
+ var app = require("../../config.js");
 app.appModel.Models.dashboaradCluster = Backbone.Model.extend({
   defaults: {
     id: "",

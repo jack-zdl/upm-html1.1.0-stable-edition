@@ -1,6 +1,6 @@
 /**
  * @Date:   2017-05-01T18:27:00+08:00
- * @Last modified time: 2017-05-01T19:56:14+08:00
+ * @Last modified time: 2017-05-03T09:38:27+08:00
  */
  var $ = require('../libs/jquery-2.1.1.min.js');
  var _ = require("../plugin/underscore/underscore.js");
@@ -9,10 +9,11 @@
  var ajaxModel = require("../my/vo/ajaxModel.js");
  var judgeStatusUtilModel = require("../my/vo/judgeStatusUtilModel.js");
  var highchartOptionUtil = require("../my/vo/highchartOptionUtil.js");
+ var app = require("../config.js");
  var app = require("../my/models/dashboardModel.js");
  var app = require("../my/collections/dashboardCollection.js");
  var app = require("../my/views/dashboardView.js");
- 
+
 
  function dashboardMain() {
    var ajax = new ajaxModel();

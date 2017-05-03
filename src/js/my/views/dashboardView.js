@@ -1,8 +1,9 @@
 /**
  * @Date:   2017-04-22T18:25:17+08:00
- * @Last modified time: 2017-05-01T18:18:18+08:00
+ * @Last modified time: 2017-05-03T09:33:33+08:00
  * commonsJS模块只需要加载一次  其他的文件就不需要加载了
  */
+ var app = require("../../config.js");
 var _ = require("underscore");
 var ajaxModel = require("../vo/ajaxModel.js");
 var judgeStatusUtilModel = require("../vo/judgeStatusUtilModel.js");
@@ -21,16 +22,14 @@ app.appModel.Views.dashboardClusterItem = Backbone.View.extend({
     return this;
   },
   changeCluster: function(content) {
-    debugger;
-    //console.log("aaaa"+content.currentTarget.attributes("id"));
     $("#cluster-text").html(content.target.innerHTML);
     this.setupPieChart(content.target.id);
   }
 });
 
 app.appModel.Views.dashboardCluster = Backbone.View.extend({
-//  el: $('#clusterView'),//绑定页面元素
- el: "#clusterView",
+  //  el: $('#clusterView'),//绑定页面元素
+  el: "#clusterView",
   events: {
     'click .cluster-click': 'changeCluster'
   },
@@ -38,8 +37,6 @@ app.appModel.Views.dashboardCluster = Backbone.View.extend({
     //this.listenTo();
   },
   changeCluster: function(content) {
-    debugger;
-    //console.log("aaaa"+content.currentTarget.attributes("id"));
     $("#cluster-text").html(content.target.innerHTML);
     this.setupPieChart(content.target.id);
   },
