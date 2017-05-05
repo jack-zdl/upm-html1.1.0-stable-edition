@@ -12058,7 +12058,7 @@ module.exports = g;
 
 /**
  * @Date:   2017-04-21T12:06:39+08:00
- * @Last modified time: 2017-05-05T11:10:03+08:00
+ * @Last modified time: 2017-05-05T13:47:03+08:00
  */
 
 var app = __webpack_require__(0);
@@ -12072,7 +12072,7 @@ app.appModel.Routers.main = Backbone.Router.extend({
     "ajax/select.html": "select"
   },
   select: function() {
-
+    alert("验证状态=");
 
   }
 
