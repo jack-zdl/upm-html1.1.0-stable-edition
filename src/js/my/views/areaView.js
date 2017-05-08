@@ -1,6 +1,6 @@
 /**
  * @Date:   2017-05-02T22:26:31+08:00
- * @Last modified time: 2017-05-03T15:39:36+08:00
+ * @Last modified time: 2017-05-08T16:06:51+08:00
  */
 var app = require("../../config.js");
 var app = require("../../my/models/areaModel.js");
@@ -241,7 +241,6 @@ app.appModel.Views.areaAddFrom = Backbone.View.extend({
   submit: function() {
     $("#siteId").attr("value", app.appConfig.SITEID); // 填充内容
     var params = $("#add-site-form").serializeObject();
-    debugger;
   //  var validateResult=areaAddModel.set(params,{"validate":true}); 返回的是true或者false
     if(areaAddModel.set(params,{"validate":true})){
       var result = ajax.post(AREAPOSTURL, JSON.stringify(params));

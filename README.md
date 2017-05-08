@@ -1,5 +1,18 @@
 # upm-web-html
 这是对upm-html1.1.0-Beta-x系列的重构，使用Backbone，Underscore，webpack的技术和工具，完成由无框架前端工程向框架前端工程转变。
+# 问题汇总
+```
+    查询alert换成bootstrap提示框或者layui的提示框
+		弹出层alert的bug,删除
+		必填项的*
+    loading一种全局覆盖（比如当提交新增 put delete）
+    loading一种局部覆盖（）
+```
+# TODO
+```
+1 必须先做完login页面，因为只有先做登录页面才可以继续下一步，保存日志必须要有登录信息
+
+```
 ## bootstrap讲解：
 ```
 1tab页的切换 一种是用 data-toggle="tab"  另一种是用 javascript

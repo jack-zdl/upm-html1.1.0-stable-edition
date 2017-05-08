@@ -15744,24 +15744,29 @@ module.exports = app;
 
 /**
  * @Date:   2017-04-21T12:06:39+08:00
- * @Last modified time: 2017-05-05T11:13:20+08:00
+ * @Last modified time: 2017-05-08T16:14:19+08:00
  */
 
 var app = __webpack_require__(0);
 var dashboardMain = __webpack_require__(14);
 var areaMain = __webpack_require__(13);
+var loginMain = __webpack_require__(24);
 var Backbone = __webpack_require__(11);
 app.appModel.Routers.main = Backbone.Router.extend({
   //hash maps for Routers
   routes: {
-    "ajax/dashboard.html": "dashboard",
-    "ajax/resources/area.html": "area"
+    "login.html": "loginFun",
+    "ajax/dashboard.html": "dashboardFun",
+    "ajax/resources/area.html": "areaFun"
   },
-  dashboard: function() {
-
+  loginFun: function() {
+    alert("测试");
+    loginMain();
+  },
+  dashboardFun: function() {
     dashboardMain();
   },
-  area: function() {
+  areaFun: function() {
     areaMain();
   }
 
@@ -17717,7 +17722,7 @@ module.exports = __webpack_amd_options__;
 
 /**
  * @Date:   2017-05-01T19:57:55+08:00
- * @Last modified time: 2017-05-03T16:12:26+08:00
+ * @Last modified time: 2017-05-08T15:03:10+08:00
  */
 var $ = __webpack_require__(7);
 var _ = __webpack_require__(4);
@@ -17727,9 +17732,6 @@ var judgeStatusUtilModel = __webpack_require__(3);
 var app = __webpack_require__(8);
 var app = __webpack_require__(15);
 var app = __webpack_require__(18);
-
-
-
 
 function areasMain() {
   var AREAURL = app.appConfig.IP + "/UPM_API/v1.0/areas?siteId=" + app.appConfig.SITEID;
@@ -17741,7 +17743,6 @@ function areasMain() {
     var result = ajax.get(AREAURL);
     var data = judgeStatus.status(result);
     if (null !== data) {
-      debugger;
     //  var areaResource = new app.appModel.Collections.areasCollection(data);
       var areaJqgrid = new app.appModel.Views.areaJqgrid({
         model: data
@@ -18029,7 +18030,7 @@ module.exports = app;
 
 /**
  * @Date:   2017-05-02T22:26:31+08:00
- * @Last modified time: 2017-05-03T15:39:36+08:00
+ * @Last modified time: 2017-05-08T16:06:51+08:00
  */
 var app = __webpack_require__(0);
 var app = __webpack_require__(8);
@@ -18270,7 +18271,6 @@ app.appModel.Views.areaAddFrom = Backbone.View.extend({
   submit: function() {
     $("#siteId").attr("value", app.appConfig.SITEID); // 填充内容
     var params = $("#add-site-form").serializeObject();
-    debugger;
   //  var validateResult=areaAddModel.set(params,{"validate":true}); 返回的是true或者false
     if(areaAddModel.set(params,{"validate":true})){
       var result = ajax.post(AREAPOSTURL, JSON.stringify(params));
@@ -18918,6 +18918,92 @@ Backbone.history.start();
 //dashboard.render();
 //test();
 //alert(app.appConfig.IP);
+
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * @Date:   2017-05-08T14:19:07+08:00
+ * @Last modified time: 2017-05-08T14:31:04+08:00
+ */
+var app = __webpack_require__(0);
+app.appModel.Models.loginModel = Backbone.Model.extend({
+  defaults: {
+    loginName: "",
+    password: ""
+  },
+  initialize:function(){
+    this.on('invalid',function(model,error){
+      alert(error);
+    });
+  },
+  validate: function(attrs) {
+    if (!_.isString(attrs.loginName)) return "名字必须是字符串";
+    if (!_.isString(attrs.password)) return "描述必须是字符串";
+  }
+});
+module.exports=app;
+
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * @Date:   2017-05-08T14:33:44+08:00
+ * @Last modified time: 2017-05-08T14:42:39+08:00
+ */
+ var $ = __webpack_require__(7);
+ var _ = __webpack_require__(4);
+ var Backbone = __webpack_require__(9);
+ var app = __webpack_require__(23);
+ var app = __webpack_require__(25);
+
+ function loginMain() {
+   alert("登录页面进入！");
+   
+ }
+ module.exports = loginMain;
+
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * @Date:   2017-05-08T14:18:14+08:00
+ * @Last modified time: 2017-05-08T14:31:56+08:00
+ */
+var app = __webpack_require__(0);
+var ajaxModel = __webpack_require__(2);
+var judgeStatusUtilModel = __webpack_require__(3);
+var app = __webpack_require__(23);
+var LOGINURL =  app.appConfig.IP + "/UPM_API/v1.0/login";
+
+var ajax = new ajaxModel();
+var judgeStatus = new judgeStatusUtilModel();
+var loginModel = new app.appModel.Models.loginModel();
+app.appModel.Views.loginFrom = Backbone.View.extend({
+  el: 'body',
+  events: {
+    'click #loginBut': 'submit'
+  },
+  submit: function() {
+    debugger;
+    var params = $("#login-form").serializeObject();
+
+    if(loginModel.set(params,{"validate":true})){
+      var result = ajax.post(AREAPOSTURL, JSON.stringify(params));
+      var status = judgeStatus.resultStatus(result);
+      app.globalFun.isResultMsg(status);
+  
+    }
+
+
+  }
+});
 
 
 /***/ })
