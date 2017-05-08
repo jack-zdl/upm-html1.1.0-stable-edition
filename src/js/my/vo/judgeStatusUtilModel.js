@@ -1,6 +1,6 @@
 /**
  * @Date:   2017-04-21T11:26:07+08:00
- * @Last modified time: 2017-05-03T12:13:54+08:00
+ * @Last modified time: 2017-05-08T20:44:40+08:00
  * @Description 判断返回的状态
  */
 function judgeStatus() {

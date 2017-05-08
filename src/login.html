@@ -107,7 +107,7 @@
 								<section>
 									<label class="label">Username</label>
 									<label class="input"> <i class="icon-append fa fa-user"></i>
-											<input type="text" id="username" name="username">
+											<input type="text" id="loginName" name="loginName">
 											<b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> Please enter username</b></label>
 								</section>
 
@@ -117,7 +117,7 @@
 											<input type="password" id="password" name="password">
 											<b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> Enter your password</b> </label>
 									<div class="note">
-										<a href="forgotpassword.html">Forgot password?</a>
+										<!-- <a href="forgotpassword.html">Forgot password?</a> -->
 									</div>
 								</section>
 
@@ -142,12 +142,8 @@
 	<!--================================================== -->
 
 	<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script>
-		if (!window.jQuery) {
-			document.write('<script src="js/libs/jquery-2.1.1.min.js"><\/script>');
-		}
-	</script>
+	<script src="js/libs/jquery-2.1.1.min.js"></script>
+	<script src="js/libs/jquery-ui-1.10.3.min.js"></script>
 
 	<!--<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 		<script> if (!window.jQuery.ui) { document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');} </script>-->
@@ -170,7 +166,44 @@
 	<!-- MAIN APP JS FILE -->
 	<script src="js/app.seed.js"></script>
 	<script src="js/plugin/my/cookie.js"></script>
-<script src="./builds.js"></script>
+
+	<script>
+		//需要定义IP
+		$("#loginBut").click(function() {
+			var loginName = $("#loginName").val();
+			var password = $("#password").val();
+			$.cookie("admin", loginName);
+			$.ajax({
+				type: 'POST',
+				url: "/UPM_API/v1.0/login",
+				dataType: 'json',
+				contentType: "application/json; charset=utf-8",
+				async: false,
+				data: JSON.stringify({
+					"loginName": loginName,
+					"password": password
+				}),
+				success: function(data) {
+					alert("aa测试");
+					debugger;
+					if (data.result == "1") {
+						window.location = "/#ajax/dashboard.html";
+					} else if (data.result == -1) {
+						alert(data.msg)
+					} else if (data.result == 0) {
+						alert(data.msg)
+					} else if (data.result == 9) {
+						alert(data.msg)
+					}
+				},
+				error: function(xhr, type) {
+					debugger;
+					alert("登录error");
+				}
+			});
+		});
+	</script>
+
 </body>
 
 </html>

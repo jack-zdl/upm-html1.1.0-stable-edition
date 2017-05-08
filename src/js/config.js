@@ -1,13 +1,13 @@
 /**
  * @Date:   2017-04-16T19:27:17+08:00
- * @Last modified time: 2017-05-03T13:50:16+08:00
+ * @Last modified time: 2017-05-08T21:14:40+08:00
  */
  var app = new Object({
    appModel : new Object({
      Models: {},
      Views: {},
      Collections: {},
-     Controllers: {},
+    //  Controllers: {},
      Routers:{}
    }),
    appConfig : new Object({
@@ -20,7 +20,14 @@
        if(null !== object){
         alert("提示信息："+object);
       }
-     }
+    },
+    isLoginStatus:function(){
+      if($.cookie("admin")){
+        return true;
+      }else {
+        window.location = "login.html";
+      }
+    }
    })
  });
 module.exports = app;

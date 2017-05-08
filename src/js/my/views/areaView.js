@@ -1,19 +1,18 @@
 /**
  * @Date:   2017-05-02T22:26:31+08:00
- * @Last modified time: 2017-05-08T16:06:51+08:00
+ * @Last modified time: 2017-05-08T22:24:19+08:00
  */
 var app = require("../../config.js");
 var app = require("../../my/models/areaModel.js");
 var ajaxModel = require("../../my/vo/ajaxModel.js");
 var judgeStatusUtilModel = require("../../my/vo/judgeStatusUtilModel.js");
-var NFSURL = app.appConfig.IP + "/UPM_API/v1.0/selections/nfs-backups?siteId=" + app.appConfig.SITEID;
+var NFSURL = app.appConfig.IP+ "/UPM_API/v1.0/selections/nfs-backups?siteId=" + app.appConfig.SITEID;
 var AREAPOSTURL = app.appConfig.IP + "/UPM_API/v1.0/areas";
 var STARTAREAURL = app.appConfig.IP + "/UPM_API/v1.0/areas/"; //{areaId}/enable
 var ajax = new ajaxModel();
 var judgeStatus = new judgeStatusUtilModel();
 var areaAddModel = new app.appModel.Models.areaAddModel();
-app.appModel.Views.areaJqgrid = Backbone.View.extend({
-  el: "#pjqgrid",
+app.appModel.Views.areaJqgrid = Backbone.View.extend({  el: "#pjqgrid",
   initialize: function() {
     this.render();
   },
@@ -71,12 +70,11 @@ app.appModel.Views.areaJqgrid = Backbone.View.extend({
     //更改jqgrid的长度
     $(window).on('resize.jqGrid', function() {
       jQuery("#jqgrid").jqGrid('setGridWidth', $("#content").width());
-    })
+    });
   }
   //end render
 });
 app.appModel.Views.areaAction = Backbone.View.extend({
-//  el: "#jqgrid-area-action",
   el:"body",
   events: {
     'click #jqgrid-area-add': 'addArea',
@@ -111,7 +109,6 @@ app.appModel.Views.areaAction = Backbone.View.extend({
     }
   },
   stopArea: function() {
-    alert("stopArea");
     var id = $("#jqgrid").jqGrid('getGridParam', 'selrow');
     if (id === null) {
       alert("请选择区域，再点击停止！");
@@ -120,7 +117,6 @@ app.appModel.Views.areaAction = Backbone.View.extend({
     }
   },
   deleteArea: function() {
-    alert("deleteArea");
     var id = $("#jqgrid").jqGrid('getGridParam', 'selrow');
     if (id === null) {
       alert("请选择区域，再点击删除！");

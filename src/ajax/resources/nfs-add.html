@@ -1,0 +1,81 @@
+<style type="text/css">
+  .add-site-form {
+    padding-top: 5px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .add-site-form table {
+    font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+    color: #666666;
+    font-size: 14px;
+    font-weight: bold;
+    width: 100%;
+  }
+
+  .add-site-form table tr {
+    border: 15px solid #ffffff;
+  }
+
+  .add-site-form table tr td:first-child {
+    width: 150px;
+    text-align: right;
+    padding-right: 10px;
+  }
+
+  .add-site-form table tr td:last-child input {
+    width: 100%;
+  }
+
+  .add-site-form table tr td textarea {
+    width: 100%;
+  }
+</style>
+<div id="dialog-message" title="Dialog Simple Title">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">NFS存储备份新增</h4>
+      </div>
+      <div class="modal-body">
+          <div class="add-site-form">
+            <form id="add-nfs-form">
+
+                    <table>
+                      <tr style="display: none;">
+                      <td>站点id</td>
+                      <td><input name="siteId" type="text" value="79affb2429ef48faa57c802a88dd8e7f" /></td>
+                      </tr>
+                      <tr>
+                      <td>备份名称</td>
+                      <td><input name="name" type="text"  /></td>
+                      </tr>
+                      <tr>
+                      <td>nfs IP地址</td>
+                      <td><input type="hidden" name="nfsIp" id="nfsIp"/>
+                      <input style="width:93px"  name="nfsIp1" id="nfsIp1" type="text"  />
+                      <span>&nbsp;.&nbsp;&nbsp;<input style="width:93px" name="nfsIp2" id="nfsIp2" type="text"  /></span>
+                      <span>&nbsp;.&nbsp;&nbsp;<input style="width:93px" name="nfsIp3" id="nfsIp3" type="text"  /></span>
+                      <span>&nbsp;.&nbsp;&nbsp;<input style="width:94px" name="nfsIp4" id="nfsIp4" type="text"  /></span>
+                      </td>
+                      </tr>
+                      <tr>
+                      <td>nfs 源目录</td>
+                      <td><input name="nfsDir" type="text"  /></td>
+                      </tr>
+                      <tr>
+                      <td>nfs 挂载目录</td>
+                      <td><input name="nfsMountDir" type="text"  /></td>
+                      </tr>
+                      <tr>
+                      <td>nfs 挂载参数</td>
+                      <td><input name="nfsMountOpts" type="text"  /></td>
+                      </tr>
+                    </table>
+            </form>
+                </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" id="ajax-btn" class="btn btn-primary">确认</button>
+      </div>
+</div>

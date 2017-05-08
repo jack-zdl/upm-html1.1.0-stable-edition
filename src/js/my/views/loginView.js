@@ -1,6 +1,6 @@
 /**
  * @Date:   2017-05-08T14:18:14+08:00
- * @Last modified time: 2017-05-08T14:31:56+08:00
+ * @Last modified time: 2017-05-08T18:00:13+08:00
  */
 var app = require("../../config.js");
 var ajaxModel = require("../../my/vo/ajaxModel.js");
@@ -17,14 +17,13 @@ app.appModel.Views.loginFrom = Backbone.View.extend({
     'click #loginBut': 'submit'
   },
   submit: function() {
-    debugger;
     var params = $("#login-form").serializeObject();
 
     if(loginModel.set(params,{"validate":true})){
       var result = ajax.post(AREAPOSTURL, JSON.stringify(params));
       var status = judgeStatus.resultStatus(result);
       app.globalFun.isResultMsg(status);
-  
+
     }
 
 
