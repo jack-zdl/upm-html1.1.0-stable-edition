@@ -1,0 +1,86 @@
+<style type="text/css">
+  .add-site-form {
+    padding-top: 5px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .add-site-form table {
+    font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+    color: #666666;
+    font-size: 14px;
+    font-weight: bold;
+    width: 100%;
+  }
+
+  .add-site-form table tr {
+    border: 15px solid #ffffff;
+  }
+
+  .add-site-form table tr td:first-child {
+    width: 150px;
+    text-align: right;
+    padding-right: 10px;
+  }
+
+  .add-site-form table tr td:last-child input {
+    width: 100%;
+  }
+
+  .add-site-form table tr td:last-child textarea {
+    width: 100%;
+  }
+
+  .line-jqgrid {
+    border-top: 1px solid black;
+    width: 200px;
+    height: 300px;
+  }
+
+  .file-from {}
+</style>
+<div id="dialog-message" title="Dialog Simple Title">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title" id="myModalLabel">软件镜像新增</h4>
+  </div>
+  <div class="modal-body">
+    <div class="add-site-form">
+      <form id="add-site-form">
+        <table>
+          <tr style="display: none;">
+            <td>站点id</td>
+            <td><input id="siteId" name="siteId" type="text" /></td>
+          </tr>
+          <tr>
+            <td>软件名称</td>
+            <td>
+              <select class="selectpicker form-control" multiple data-max-options="1" id="definitionSubServId" title="请选择软件">
+
+                          </select>
+            </td>
+          </tr>
+          <tr>
+            <td>主版本</td>
+            <td>
+              <select class=" selectpicker form-control" multiple data-max-options="1" id="definitionSubServSoftwareId" name="definitionSubServSoftwareId" title="请选择软件主版本">
+                            </select>
+            </td>
+          </tr>
+          <tr>
+            <td>修订版本</td>
+            <td>
+              <input type="text" id="patchVersion" name="patchVersion" />
+            </td>
+          </tr>
+        </table>
+      </form>
+
+
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+    <button type="button" id="ajax-btn" class="btn btn-primary">确认</button>
+  </div>
+</div>

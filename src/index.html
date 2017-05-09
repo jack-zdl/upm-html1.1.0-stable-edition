@@ -23,7 +23,7 @@
 	<!-- SmartAdmin RTL Support -->
 	<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.min.css">
 	<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap-select.css" </head>
-
+	<link rel="stylesheet" type="text/css" media="screen" href="css/layui.css"></link>
 	<!--
 
 	TABLE OF CONTENTS.
@@ -226,7 +226,16 @@
 								<a href="ajax/resources/area.html">区域管理</a>
 							</li>
 							<li>
-								<a href="ajax/resources/area.html">网段管理</a>
+								<a href="ajax/resources/network.html">网段管理</a>
+							</li>
+							<li>
+								<a href="ajax/resources/cluster.html">集群管理</a>
+							</li>
+							<li>
+								<a href="ajax/resources/software.html">软件管理</a>
+							</li>
+							<li>
+								<a href="ajax/resources/host.html">主机管理</a>
 							</li>
 						</ul>
 					</li>
@@ -359,7 +368,8 @@
 		<script src="js/plugin/my/bootstrap-select.js"></script>
 		<script src="js/plugin/my/jquery.serialize-object.min.js"></script>
 		<script src="js/plugin/my/cookie.js"></script>
-
+		<script src="js/plugin/layui/layui.js"></script>
+		<script src="js/>plugin/layui/layer.js"></script>
 
 
 		<!-- 未知-->
@@ -403,7 +413,20 @@
 				s.parentNode.insertBefore(ga, s);
 			})();
 		</script>
-
+		<script>
+			layui.use(['layer', 'form'], function() {
+				var layer = layui.layer;
+				layer.msg('Hello World');
+			});
+		</script>
+		<script>
+			;
+			! function() {
+				//当使用了 layui.all.js，无需再执行layui.use()方法
+				var layer = layui.layer;
+					layer.msg("hello layer");
+			}();
+		</script>
 	</body>
 
 </html>

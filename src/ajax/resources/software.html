@@ -1,0 +1,147 @@
+<div class="row">
+
+  <!-- col -->
+  <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+    <h1 class="page-title txt-color-blueDark">
+
+			<!-- PAGE HEADER -->
+			<i class="fa-fw fa fa-table"></i>
+				Tables
+			<span>>
+				软件
+			</span>
+		</h1>
+  </div>
+  <!-- end col -->
+
+  <!-- right side of the page with the sparkline graphs -->
+  <!-- col -->
+  <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
+    <!-- sparks -->
+    <ul id="sparks">
+      <li class="sparks-info">
+        <h5> 交易金额 <span class="txt-color-blue">￥47,171</span></h5>
+        <div class="sparkline txt-color-blue hidden-mobile hidden-md hidden-sm">
+          1300, 1877, 2500, 2577, 2000, 2100, 3000, 2700, 3631, 2471, 2700, 3631, 2471
+        </div>
+      </li>
+      <li class="sparks-info">
+        <h5>资源使用指数 <span class="txt-color-purple"><i class="fa fa-arrow-circle-up" data-rel="bootstrap-tooltip" title="Increased"></i>&nbsp;45%</span></h5>
+        <div class="sparkline txt-color-purple hidden-mobile hidden-md hidden-sm">
+          110,150,300,130,400,240,220,310,220,300, 270, 210
+        </div>
+      </li>
+      <li class="sparks-info">
+        <h5>  资源占用量 <span class="txt-color-greenDark"><i class="fa fa-shopping-cart"></i>&nbsp;2447</span></h5>
+        <div class="sparkline txt-color-greenDark hidden-mobile hidden-md hidden-sm">
+          110,150,300,130,400,240,220,310,220,300, 270, 210
+        </div>
+      </li>
+    </ul>
+    <!-- end sparks -->
+  </div>
+  <!-- end col -->
+
+</div>
+<!-- end row -->
+
+<div>
+
+  <div style="width: 100%;height: 40px;background-color: #FAFAFA;">
+    <ul class="nav nav-tabs pull-left in" id="myTab">
+      <li class="active">
+        <a data-toggle="tab" href="#s1"><i class="fa fa-clock-o"></i> <span class="hidden-mobile hidden-tablet">软  件  镜 像</span></a>
+      </li>
+
+      <li>
+        <a data-toggle="tab" href="#s2"><i class="fa fa-facebook"></i> <span class="hidden-mobile hidden-tablet">软   件</span></a>
+      </li>
+
+    </ul>
+  </div>
+
+  <!-- widget grid -->
+  <div id="myTabContent" class="tab-content">
+
+    <div class="tab-pane fade active in padding-10 no-padding-bottom" id="s1">
+      <section id="widget-grid" class="">
+        <div class="row">
+          <!-- NEW WIDGET START -->
+          <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+            <div>
+              <strong>查询</strong>
+              <input type="text" name="search">
+              <button id="search">确定</button>
+            </div>
+            <br>
+            <div class="">
+              <button class="btn btn-default btn-success" id="software-add" type="submit">新增</button>
+              <button class="btn btn-default btn-primary" id="software-start" type="submit">启动</button>
+              <button class="btn btn-default btn-info" id="software-stop" type="submit">停止</button>
+              <button class="btn btn-default btn-danger" id="software-delete" type="submit">删除</button>
+            </div>
+            <br>
+
+            <div id="pjqgrid">
+              <table id="jqgrid"></table>
+            </div>
+          </article>
+        </div>
+      </section>
+
+    </div>
+    <!-- end s1 tab pane -->
+
+    <div class="tab-pane fade" id="s2">
+      <section id="widget-grid" class="">
+        <!-- row -->
+        <div class="row">
+          <!-- NEW WIDGET START -->
+          <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <br>
+            <div>
+              <strong>查询</strong>
+              <input type="text" name="search">
+              <button id="search-software">确定</button>
+            </div>
+            <br>
+            <div id="pjqgridSoftware" class="tab-pane">
+              <table id="jqgridSoftware"></table>
+            </div>
+          </article>
+          <!-- WIDGET END -->
+        </div>
+        <!-- end row -->
+      </section>
+    </div>
+
+  </div>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    </div>
+  </div>
+</div>
+
+<div id="dialog_simple" title="Dialog Simple Title">
+  <p>
+    确认删除
+  </p>
+</div>
+<div id="dialog_simple_task" title="Dialog Simple Title">
+  <div id="pjqgrid-task" class="tab-pane">
+    <table id="jqgrid-task"></table>
+  </div>
+</div>
+<script>
+  pageSetUp();
+
+  var pagefunction = function() {};
+
+  var pagedestroy = function() {}
+
+  pagefunction();
+</script>

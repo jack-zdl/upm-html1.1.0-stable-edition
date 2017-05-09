@@ -1,6 +1,6 @@
 /**
  * @Date:   2017-05-08T17:38:54+08:00
- * @Last modified time: 2017-05-08T23:17:35+08:00
+ * @Last modified time: 2017-05-09T09:34:30+08:00
  */
 var app = require("../../config.js");
 var app = require("../../my/models/areaModel.js");
@@ -77,7 +77,7 @@ app.appModel.Views.nfsViewJqgrid = Backbone.View.extend({
         ],
         rowNum: 10000,
         editurl: "dummy.html",
-        caption: "区域列表",
+        caption: "备份存储列表",
         viewrecords: true,
         toolbarfilter: true,
         sortorder: "asc",

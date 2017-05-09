@@ -1,0 +1,103 @@
+<style type="text/css">
+  .add-site-form {
+    padding-top: 5px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .add-site-form table {
+    font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+    color: #666666;
+    font-size: 14px;
+    font-weight: bold;
+    width: 100%;
+  }
+
+  .add-site-form table tr {
+    border: 15px solid #ffffff;
+  }
+
+  .add-site-form table tr td:first-child {
+    width: 100px;
+    text-align: right;
+    padding-right: 10px;
+  }
+
+  .add-site-form table tr td:last-child input {
+    width: 100%;
+  }
+
+  .add-site-form table tr td:last-child select {
+    width: 100%;
+  }
+
+  .add-site-form table tr td:last-child textnfs {
+    width: 100%;
+  }
+</style>
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <h4 class="modal-title" id="myModalLabel">网段增加</h4>
+</div>
+<div class="modal-body">
+  <div class="add-site-form">
+    <form id="add-network-form">
+
+      <table>
+        <input type="hidden" name="siteId" id="siteId" value="79affb2429ef48faa57c802a88dd8e7f" />
+
+        <tr>
+          <td>所属区域</td>
+          <td> <select class="form-control" id="areaId" name="areaId">
+                          <option  value="">请选择</option>
+                        </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td>网段名称</td>
+          <td><input name="name" type="text" /></td>
+        </tr>
+        <tr>
+          <td>起始IP</td>
+          <input type="hidden" name="startIp" id="startIp" />
+          <td><input style="width:93px" name="startIp1" id="startIp1" type="text" />
+            <span>&nbsp;.&nbsp;&nbsp;<input style="width:93px" name="startIp2" id="startIp2" type="text"  /></span>
+            <span>&nbsp;.&nbsp;&nbsp;<input style="width:93px" name="startIp3" id="startIp3"  type="text"  /></span>
+            <span>&nbsp;.&nbsp;&nbsp;<input style="width:94px" name="startIp4" id="startIp4" type="text"  /></span>
+          </td>
+        </tr>
+        <tr>
+          <td>结束IP</td>
+          <input type="hidden" name="endIp" id="endIp" />
+          <td><input style="width:93px" name="endIp1" id="endIp1" type="text" />
+            <span>&nbsp;.&nbsp;&nbsp;<input style="width:93px" name="endIp2" id="endIp2" type="text"  /></span>
+            <span>&nbsp;.&nbsp;&nbsp;<input style="width:93px" name="endIp3" id="endIp3" type="text"  /></span>
+            <span>&nbsp;.&nbsp;&nbsp;<input style="width:94px" name="endIp4" id="endIp4" type="text"  /></span>
+          </td>
+        </tr>
+        <tr>
+          <td>掩码</td>
+          <td><input name="prefix" type="text" /></td>
+        </tr>
+        <tr>
+          <td>标识VlanId</td>
+          <td><input name="vlanId" type="text" /></td>
+        </tr>
+        <tr>
+          <td>网关</td>
+          <input type="hidden" name="gateway" id="gateway" />
+          <td><input style="width:93px" name="gateway1" id="gateway1" type="text" />
+            <span>&nbsp;.&nbsp;&nbsp;<input style="width:93px" name="gateway2"  id="gateway2" type="text"  /></span>
+            <span>&nbsp;.&nbsp;&nbsp;<input style="width:93px" name="gateway3"  id="gateway3" type="text"  /></span>
+            <span>&nbsp;.&nbsp;&nbsp;<input style="width:94px" name="gateway4"  id="gateway4" type="text"  /></span>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+  <button type="button" id="ajax-btn" class="btn btn-primary">确认</button>
+</div>

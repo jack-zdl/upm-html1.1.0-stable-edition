@@ -64,7 +64,7 @@
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 30);
+/******/ 	return __webpack_require__(__webpack_require__.s = 29);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -15778,7 +15778,7 @@ module.exports=app;
 
 /**
  * @Date:   2017-04-21T12:06:39+08:00
- * @Last modified time: 2017-05-08T20:51:36+08:00
+ * @Last modified time: 2017-05-09T09:33:03+08:00
  */
 
 var app = __webpack_require__(0);
@@ -15786,13 +15786,17 @@ var dashboardMain = __webpack_require__(15);
 var areaMain = __webpack_require__(14);
 var loginMain = __webpack_require__(16);
 var nfsMain = __webpack_require__(17);
+var networkMain = __webpack_require__(30);
+var clusterMain = __webpack_require__(35);
 var Backbone = __webpack_require__(12);
 app.appModel.Routers.main = Backbone.Router.extend({
   //hash maps for Routers
   routes: {
     "ajax/dashboard.html": "dashboardFun",
     "ajax/resources/area.html": "areaFun",
-    "ajax/resources/nfs.html": "nfsFun"
+    "ajax/resources/nfs.html": "nfsFun",
+    "ajax/resources/network.html":"networkFun",
+    "ajax/resources/cluster.html":"clusterFun"
   },
   dashboardFun: function() {
     var status = app.globalFun.isLoginStatus();
@@ -15805,7 +15809,14 @@ app.appModel.Routers.main = Backbone.Router.extend({
   nfsFun: function() {
       var status = app.globalFun.isLoginStatus();
       nfsMain();
-
+  },
+  networkFun:function(){
+    var status = app.globalFun.isLoginStatus();
+    networkMain();
+  },
+  clusterFun:function(){
+    var status = app.globalFun.isLoginStatus();
+    clusterMain();
   }
 
 });
@@ -17769,7 +17780,7 @@ var ajaxModel = __webpack_require__(1);
 var judgeStatusUtilModel = __webpack_require__(2);
 var app = __webpack_require__(7);
 var app = __webpack_require__(19);
-var app = __webpack_require__(24);
+var app = __webpack_require__(23);
 
 function areasMain() {
   var AREAURL = app.appConfig.IP + "/UPM_API/v1.0/areas?siteId=" + app.appConfig.SITEID;
@@ -17807,14 +17818,14 @@ module.exports = areasMain;
  var $ = __webpack_require__(5);
  var _ = __webpack_require__(3);
  var Backbone = __webpack_require__(6);
- var highcharts = __webpack_require__(29);
+ var highcharts = __webpack_require__(28);
  var ajaxModel = __webpack_require__(1);
  var judgeStatusUtilModel = __webpack_require__(2);
- var highchartOptionUtil = __webpack_require__(28);
+ var highchartOptionUtil = __webpack_require__(27);
  var app = __webpack_require__(0);
- var app = __webpack_require__(22);
+ var app = __webpack_require__(21);
  var app = __webpack_require__(20);
- var app = __webpack_require__(25);
+ var app = __webpack_require__(24);
 
 
  function dashboardMain() {
@@ -17888,7 +17899,7 @@ module.exports = areasMain;
  var _ = __webpack_require__(3);
  var Backbone = __webpack_require__(6);
  var app = __webpack_require__(10);
- var app = __webpack_require__(26);
+ var app = __webpack_require__(25);
 
  function loginMain() {
    alert("登录页面进入！");
@@ -17910,9 +17921,9 @@ var _ = __webpack_require__(3);
 var Backbone = __webpack_require__(6);
 var ajaxModel = __webpack_require__(1);
 var judgeStatusUtilModel = __webpack_require__(2);
-var app = __webpack_require__(23);
+var app = __webpack_require__(22);
 //var app = require("../my/collections/nfsCollection.js");
-var app = __webpack_require__(27);
+var app = __webpack_require__(26);
 
 function nfsMain() {
 
@@ -18001,8 +18012,7 @@ module.exports=app;
 
 
 /***/ }),
-/* 21 */,
-/* 22 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -18143,7 +18153,7 @@ module.exports = app;
 
 
 /***/ }),
-/* 23 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -18216,7 +18226,7 @@ module.exports = app;
 
 
 /***/ }),
-/* 24 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -18477,7 +18487,7 @@ module.exports = app;
 
 
 /***/ }),
-/* 25 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -18601,7 +18611,7 @@ module.exports = app;
 
 
 /***/ }),
-/* 26 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -18638,12 +18648,12 @@ app.appModel.Views.loginFrom = Backbone.View.extend({
 
 
 /***/ }),
-/* 27 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
  * @Date:   2017-05-08T17:38:54+08:00
- * @Last modified time: 2017-05-08T23:17:35+08:00
+ * @Last modified time: 2017-05-09T09:34:30+08:00
  */
 var app = __webpack_require__(0);
 var app = __webpack_require__(7);
@@ -18720,7 +18730,7 @@ app.appModel.Views.nfsViewJqgrid = Backbone.View.extend({
         ],
         rowNum: 10000,
         editurl: "dummy.html",
-        caption: "区域列表",
+        caption: "备份存储列表",
         viewrecords: true,
         toolbarfilter: true,
         sortorder: "asc",
@@ -18905,7 +18915,7 @@ module.exports = app;
 
 
 /***/ }),
-/* 28 */
+/* 27 */
 /***/ (function(module, exports) {
 
 /**
@@ -18974,7 +18984,7 @@ module.exports=getHighchartOption;
 
 
 /***/ }),
-/* 29 */
+/* 28 */
 /***/ (function(module, exports) {
 
 /*
@@ -19362,7 +19372,7 @@ a.idCounter++);v=v.call(this);!h[f._id]&&v?f.chartOptions&&(h[f._id]=this.curren
 
 
 /***/ }),
-/* 30 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -19409,6 +19419,649 @@ Backbone.history.start();
 //dashboard.render();
 //test();
 //alert(app.appConfig.IP);
+
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * @Date:   2017-05-09T07:47:24+08:00
+ * @Last modified time: 2017-05-09T08:12:15+08:00
+ */
+var $ = __webpack_require__(5);
+var _ = __webpack_require__(3);
+var Backbone = __webpack_require__(6);
+var ajaxModel = __webpack_require__(1);
+var judgeStatusUtilModel = __webpack_require__(2);
+var app = __webpack_require__(32);
+var app = __webpack_require__(31);
+var app = __webpack_require__(33);
+
+
+
+function networkMain() {
+  var NETWORKURL = app.appConfig.IP + "/UPM_API/v1.0/networkings?siteId="+ app.appConfig.SITEID;
+  var ajax = new ajaxModel();
+  var judgeStatus = new judgeStatusUtilModel();
+
+  var result = ajax.get(NETWORKURL);
+  var data = judgeStatus.status(result);
+  if (null !== data) {
+  //  var areaResource = new app.appModel.Collections.areasCollection(data);
+    var networkViewJqgrid = new app.appModel.Views.networkViewJqgrid({
+      model: data
+    });
+  } else {
+    alert("提示信息：" + data);
+  }
+  var networkViewModal=new app.appModel.Views.networkViewModal();
+  var networkViewAction= new app.appModel.Views.networkViewAction();
+}
+module.exports = networkMain;
+
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * @Date:   2017-05-09T07:33:23+08:00
+ * @Last modified time: 2017-05-09T07:36:13+08:00
+ */
+ var app = __webpack_require__(0);
+app.appModel.Collections.networkCollection = Backbone.Collection.extend({
+//  model:app.appModel.Models.areaModel,
+});
+module.exports = app;
+
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * @Date:   2017-05-09T07:32:59+08:00
+ * @Last modified time: 2017-05-09T07:35:45+08:00
+ */
+ var app = __webpack_require__(0);
+ var _ = __webpack_require__(3);
+ app.appModel.Models.networkModel = Backbone.Model.extend({
+
+ });
+ module.exports = app;
+
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * @Date:   2017-05-09T07:33:46+08:00
+ * @Last modified time: 2017-05-09T09:34:15+08:00
+ */
+var app = __webpack_require__(0);
+var app = __webpack_require__(32);
+var ajaxModel = __webpack_require__(1);
+var judgeStatusUtilModel = __webpack_require__(2);
+
+
+app.appModel.Views.networkViewJqgrid = Backbone.View.extend({
+  el: "#pjqgrid",
+  initialize: function() {
+    this.render();
+  },
+  render: function() {
+    if ($("#jqgrid tr:visible").length === 0) {
+      jQuery("#jqgrid").jqGrid({
+        data: this.model,
+        datatype: "local",
+        height: 'auto',
+        colNames: ["所属区域", "网段名称", "起始IP", "结束IP", "掩码", "网关", "标记vlanID", "可用"],
+        colModel: [{
+            name: 'areaName',
+            index: 'areaName',
+            align: "center"
+          },
+          {
+            name: 'name',
+            index: 'networkIp',
+            align: "center"
+          },
+          {
+            name: 'startIp',
+            index: 'startIp',
+            align: "center"
+          },
+          {
+            name: 'endIp',
+            index: 'endIp',
+            align: "center"
+          },
+          {
+            name: 'prefix',
+            index: 'prefix',
+            align: "center"
+          },
+          {
+            name: 'gateway',
+            index: 'gateway',
+            align: "center"
+          },
+          {
+            name: 'vlanId',
+            index: 'vlanId',
+            align: "center"
+          },
+          {
+            name: 'enabled',
+            index: 'enabled',
+            align: "center"
+          }
+
+        ],
+        rowNum: 10000,
+        editurl: "dummy.html",
+        caption: "网段列表",
+        viewrecords: true,
+        toolbarfilter: true,
+        sortorder: "asc",
+        forceFit: true,
+        autowidth: true,
+        rownumbers: true,
+        onSelectRow: function(id, status) {
+          if (status === false) {
+            jQuery("#jqgrid").jqGrid('resetSelection');
+          }
+          return (true);
+        },
+      });
+    } else {
+      jQuery("#jqgrid").setGridParam({
+        data: this.model,
+        datatype: "local"
+      }).trigger("reloadGrid");
+
+    }
+    //更改jqgrid的长度
+    $(window).on('resize.jqGrid', function() {
+      jQuery("#jqgrid").jqGrid('setGridWidth', $("#content").width());
+    });
+  }
+  //end render
+});
+app.appModel.Views.networkViewModal = Backbone.View.extend({
+  el: "#network-modal",
+  initialize: function() {
+    this.render();
+  },
+  render: function() {
+    $('#dialog_simple_delete').dialog({
+      autoOpen: false,
+      width: 300,
+      resizable: false,
+      modal: true,
+      title: "删除提示",
+      buttons: [{
+        html: "<i class='fa fa-trash-o'></i>&nbsp;删除",
+        "class": "btn btn-danger",
+        click: function() {
+          var id = $("#jqgrid").jqGrid('getGridParam', 'selrow');
+          var result = ajax.delete(STARTAREAURL + id);
+          var status = judgeStatus.resultStatus(result);
+          app.globalFun.isResultMsg(status);
+          $(this).dialog("close");
+        }
+      }, {
+        html: "<i class='fa fa-times'></i>&nbsp;取消",
+        "class": "btn btn-default",
+        click: function() {
+          $(this).dialog("close");
+        }
+      }]
+    });
+    $('#dialog_simple_stop').dialog({
+      autoOpen: false,
+      width: 300,
+      resizable: false,
+      modal: true,
+      title: "停止提示",
+      buttons: [{
+        html: "<i class='fa fa-trash-o'></i>&nbsp;停止",
+        "class": "btn btn-danger",
+        click: function() {
+          var id = $("#jqgrid").jqGrid('getGridParam', 'selrow');
+          var result = ajax.put(STARTAREAURL + id + "/disable");
+          var status = judgeStatus.resultStatus(result);
+          app.globalFun.isResultMsg(status);
+          $(this).dialog("close");
+        }
+      }, {
+        html: "<i class='fa fa-times'></i>&nbsp;取消",
+        "class": "btn btn-default",
+        click: function() {
+          $(this).dialog("close");
+        }
+      }]
+    });
+    $('#dialog_simple_start').dialog({
+      autoOpen: false,
+      width: 300,
+      resizable: false,
+      modal: true,
+      title: "启动提示",
+      buttons: [{
+        html: "<i class='fa fa-trash-o'></i>&nbsp;启动",
+        "class": "btn btn-danger",
+        click: function() {
+          var id = $("#jqgrid").jqGrid('getGridParam', 'selrow');
+          var result = ajax.put(STARTAREAURL + id + "/enable");
+          var status = judgeStatus.resultStatus(result);
+          app.globalFun.isResultMsg(status);
+          $(this).dialog("close");
+        }
+      }, {
+        html: "<i class='fa fa-times'></i>&nbsp;取消",
+        "class": "btn btn-default",
+        click: function() {
+          $(this).dialog("close");
+        }
+      }]
+    });
+  },
+  addArea: function(name) {
+    $('#myModal').modal({
+      remote: name + '.html',
+      show: true
+    }).on("hidden.bs.modal", function() {
+      $(this).removeData("bs.modal");
+    });
+  }
+});
+app.appModel.Views.networkViewAction = Backbone.View.extend({
+  el:"body",
+  events: {
+    'click #network-add': 'addNetwork',
+    'click #network-start': "startNetwork",
+    'click #network-stop': "stopNetwork",
+    'click #network-delete': "deleteNetwork",
+    'click #search':"search"
+  },
+  addNetwork:function(){
+    var networkViewModal = new app.appModel.Views.networkViewModal();
+    networkViewModal.addArea("ajax/resources/network-add");
+  },
+  startNetwork:function(){
+    var id = $("#jqgrid").jqGrid('getGridParam', 'selrow');
+    if (id === null) {
+      alert("请选择网段，再点击启动！");
+    } else {
+      $('#dialog_simple_start').dialog('open');
+    }
+  },
+  stopNetwork:function(){
+    var id = $("#jqgrid").jqGrid('getGridParam', 'selrow');
+    if (id === null) {
+      alert("请选择网段，再点击停止！");
+    } else {
+      $('#dialog_simple_stop').dialog('open');
+    }
+  },
+  deleteNetwork:function(){
+    var id = $("#jqgrid").jqGrid('getGridParam', 'selrow');
+    if (id === null) {
+      alert("请选择网段，再点击删除！");
+    } else {
+      $('#dialog_simple_delete').dialog('open');
+    }
+  },
+  search:function(){
+
+  }
+});
+module.exports=app;
+
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * @Date:   2017-05-09T09:18:03+08:00
+ * @Last modified time: 2017-05-09T09:21:38+08:00
+ */
+ var app = __webpack_require__(0);
+ var _ = __webpack_require__(3);
+ app.appModel.Models.clusterJqgridModel = Backbone.Model.extend({
+
+ });
+ app.appModel.Models.clusterAddModel = Backbone.Model.extend({
+   defaults: {
+     name: "",
+     description: "",
+     siteId: "",
+     nfsBackupId: ""
+   },
+   initialize:function(){
+     this.on('invalid',function(model,error){
+       alert(error);
+     });
+   },
+   validate: function(attrs) {
+     if (!_.isString(attrs.name)) return "名字必须是字符串";
+     if (!_.isString(attrs.description)) return "描述必须是字符串";
+     if (!_.isString(attrs.siteId)) return "站点必须是字符串";
+     if (!_.isString(attrs.nfsBackupId)) return "nfs必须是字符串";
+   }
+ });
+ module.exports = app;
+
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * @Date:   2017-05-09T09:28:20+08:00
+ * @Last modified time: 2017-05-09T09:59:47+08:00
+ */
+ var $ = __webpack_require__(5);
+ var _ = __webpack_require__(3);
+ var Backbone = __webpack_require__(6);
+ var ajaxModel = __webpack_require__(1);
+ var judgeStatusUtilModel = __webpack_require__(2);
+ var app = __webpack_require__(34);
+ var app = __webpack_require__(36);
+ var app = __webpack_require__(37);
+
+ function clusterMain(){
+   var CLUSTERURL = app.appConfig.IP + "/UPM_API/v1.0/clusters?siteId=" + app.appConfig.SITEID;
+
+   var ajax = new ajaxModel();
+   var judgeStatus = new judgeStatusUtilModel();
+
+   var result = ajax.get(CLUSTERURL);
+   var data = judgeStatus.status(result);
+   if (null !== data) {
+   //  var areaResource = new app.appModel.Collections.areasCollection(data);
+     var areaJqgrid = new app.appModel.Views.clusterJqgrid({
+       model: data
+     });
+   } else {
+     alert("提示信息：" + data);
+   }
+   var clusterViewModal = new app.appModel.Views.clusterViewModal();
+   var clusterViewAction = new   app.appModel.Views.clusterViewAction();
+
+ }
+ module.exports=clusterMain;
+
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * @Date:   2017-05-09T09:18:17+08:00
+ * @Last modified time: 2017-05-09T09:21:56+08:00
+ */
+ var app = __webpack_require__(0);
+app.appModel.Collections.clusterCollection = Backbone.Collection.extend({
+//  model:app.appModel.Models.areaModel,
+});
+module.exports = app;
+
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * @Date:   2017-05-09T09:18:33+08:00
+ * @Last modified time: 2017-05-09T10:33:38+08:00
+ */
+var app = __webpack_require__(0);
+var app = __webpack_require__(34);
+var ajaxModel = __webpack_require__(1);
+var judgeStatusUtilModel = __webpack_require__(2);
+
+var ajax = new ajaxModel();
+var judgeStatus = new judgeStatusUtilModel();
+var areaAddModel = new app.appModel.Models.areaAddModel();
+
+
+
+app.appModel.Views.clusterJqgrid = Backbone.View.extend({
+  el: "#pjqgrid",
+  initialize: function() {
+    this.render();
+  },
+  render: function() {
+    if ($("#jqgrid tr:visible").length === 0) {
+      jQuery("#jqgrid").jqGrid({
+        data: this.model,
+        datatype: "local",
+        height: 'auto',
+        colNames: ["所属区域", "集群名称", "备份", "最大使用率", "最大主机数量", "软件", "可用"],
+        colModel: [{
+            name: "areaName",
+            index: "areaName",
+            align: "center"
+          },
+          {
+            name: "name",
+            index: "name",
+            align: "center"
+          },
+          {
+            name: "nfSBackupName",
+            index: "nfSBackupName",
+            align: "center"
+          },
+          {
+            name: "maxUsage",
+            index: "maxUsage",
+            align: "center"
+          },
+          {
+            name: "maxHostCount",
+            index: "maxHostCount",
+            align: "center"
+          },
+          {
+            name: "definitionSubServList",
+            index: "definitionSubServList",
+            align: "center",
+            formatter: function(cellvalue, options, rowObject) {
+              var data = "";
+              for (var i = 0; i < cellvalue.length; i++) {
+                data = data + cellvalue[i].name + "\n";
+              }
+              return data;
+            }
+          },
+          {
+            name: "enabledText",
+            index: "enabledText",
+            align: "center"
+          }
+
+        ],
+        rowNum: 10000,
+        editurl: "dummy.html",
+        caption: "集群列表",
+        viewrecords: true,
+        toolbarfilter: true,
+        sortorder: "asc",
+        forceFit: true,
+        autowidth: true,
+        rownumbers: true,
+        onSelectRow: function(id, status) {
+          if (status === false) {
+            jQuery("#jqgrid").jqGrid('resetSelection');
+          }
+          return (true);
+        },
+      });
+    } else {
+      jQuery("#jqgrid").setGridParam({
+        data: this.model,
+        datatype: "local"
+      }).trigger("reloadGrid");
+
+    }
+    //更改jqgrid的长度
+    $(window).on('resize.jqGrid', function() {
+      jQuery("#jqgrid").jqGrid('setGridWidth', $("#content").width());
+    });
+  }
+  //end render
+});
+app.appModel.Views.clusterViewModal = Backbone.View.extend({
+  el: "#cluster-modal",
+  initialize: function() {
+    this.render();
+  },
+  render: function() {
+    $('#dialog_simple_delete').dialog({
+      autoOpen: false,
+      width: 300,
+      resizable: false,
+      modal: true,
+      title: "删除提示",
+      buttons: [{
+        html: "<i class='fa fa-trash-o'></i>&nbsp;删除",
+        "class": "btn btn-danger",
+        click: function() {
+          var id = $("#jqgrid").jqGrid('getGridParam', 'selrow');
+          var result = ajax.delete(STARTAREAURL + id);
+          var status = judgeStatus.resultStatus(result);
+          app.globalFun.isResultMsg(status);
+          $(this).dialog("close");
+        }
+      }, {
+        html: "<i class='fa fa-times'></i>&nbsp;取消",
+        "class": "btn btn-default",
+        click: function() {
+          $(this).dialog("close");
+        }
+      }]
+    });
+    $('#dialog_simple_stop').dialog({
+      autoOpen: false,
+      width: 300,
+      resizable: false,
+      modal: true,
+      title: "停止提示",
+      buttons: [{
+        html: "<i class='fa fa-trash-o'></i>&nbsp;停止",
+        "class": "btn btn-danger",
+        click: function() {
+          var id = $("#jqgrid").jqGrid('getGridParam', 'selrow');
+          var result = ajax.put(STARTAREAURL + id + "/disable");
+          var status = judgeStatus.resultStatus(result);
+          app.globalFun.isResultMsg(status);
+          $(this).dialog("close");
+        }
+      }, {
+        html: "<i class='fa fa-times'></i>&nbsp;取消",
+        "class": "btn btn-default",
+        click: function() {
+          $(this).dialog("close");
+        }
+      }]
+    });
+    $('#dialog_simple_start').dialog({
+      autoOpen: false,
+      width: 300,
+      resizable: false,
+      modal: true,
+      title: "启动提示",
+      buttons: [{
+        html: "<i class='fa fa-trash-o'></i>&nbsp;启动",
+        "class": "btn btn-danger",
+        click: function() {
+          var id = $("#jqgrid").jqGrid('getGridParam', 'selrow');
+          var result = ajax.put(STARTAREAURL + id + "/enable");
+          var status = judgeStatus.resultStatus(result);
+          app.globalFun.isResultMsg(status);
+          $(this).dialog("close");
+        }
+      }, {
+        html: "<i class='fa fa-times'></i>&nbsp;取消",
+        "class": "btn btn-default",
+        click: function() {
+          $(this).dialog("close");
+        }
+      }]
+    });
+  },
+  addArea: function(name) {
+    $('#myModal').modal({
+      remote: name + '.html',
+      show: true
+    }).on("hidden.bs.modal", function() {
+      $(this).removeData("bs.modal");
+    });
+  }
+});
+app.appModel.Views.clusterViewAction = Backbone.View.extend({
+      el: "body",
+      events: {
+        'click #cluster-add': 'addArea',
+        'click #cluster-start': "startArea",
+        'click #cluster-stop': "stopArea",
+        'click #cluster-delete': "deleteArea",
+        'click #search': "search"
+      },
+      initialize: function() {},
+      render: function() {},
+      addArea: function() {
+        var areaBootstrapModal = new app.appModel.Views.areaBootstrapModal();
+        areaBootstrapModal.addArea("ajax/resources/cluster-add");
+        // var nfsResult = ajax.get(NFSURL);
+        // var nfsData = judgeStatus.selectStatus(nfsResult);
+        // if (null !== nfsData) {
+        //   var areaAddView = new app.appModel.Views.areaAddFrom({
+        //     model: nfsData
+        //   });
+        // } else {
+        //   alert("提示信息：" + data);
+        // }
+      },
+      startArea: function() {
+        var id = $("#jqgrid").jqGrid('getGridParam', 'selrow');
+        //var rowData = $("#jqgrid").jqGrid("getRowData",id);
+        // var val= rowData.id;
+        if (id === null) {
+
+        // layer.alert('内容');
+          }else{
+            $('#dialog_simple_start').dialog('open');
+          }
+        },
+        stopArea: function() {
+            var id = $("#jqgrid").jqGrid('getGridParam', 'selrow');
+            if (id === null) {
+              // layer.msg('请选择集群，再点击停止！');
+            } else {
+              $('#dialog_simple_stop').dialog('open');
+            }
+          },
+          deleteArea: function() {
+            var id = $("#jqgrid").jqGrid('getGridParam', 'selrow');
+            if (id === null) {
+              // layer.msg('请选择集群，再点击删除！');
+            } else {
+              $('#dialog_simple').dialog('open');
+            }
+          },
+          search: function() {
+            alert("刷新");
+          }
+      });
+
+    module.exports = app;
 
 
 /***/ })
